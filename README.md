@@ -1,6 +1,4 @@
 ```
-
-
                _       _      _                      _                                         
    ____       (_)     (_)    (_)                    | |                                        
   / __ \__   ___ _ __  _  ___ _ _   _ ___ _ __   ___| |_ ___                                   
@@ -17,8 +15,6 @@
 |_| |_|  \___/|_| |_|\__|      \___|_| |_|\__,_|  \__,_|\___| \_/ \___|_|\___/| .__/ \___|_|   
                                                                               | |              
                                                                               |_|              
-
-
 ```
 
 ## $ whoami
@@ -106,9 +102,8 @@ OPTIONS:
 
 ```bash
 Starting communication...
-[OK] I'm a frontend developer based in Caxias do Sul, Rio Grande do Sul, Brasil
-[OK] Technology seeker | Hardware enthusiast | Music lover
-[OK] Companies, use my data carefully
+[OK] I'm a front-end developer based in Brasil
+[OK] Coding enthusiast | Technology seeker
 [....] Loading response time...
 [OK] Will respond within 24 hours
 
