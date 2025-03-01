@@ -1,4 +1,4 @@
-# Vinícius Neto | Frontend Developer
+# Vinícius Neto | Front-end Developer
 
 ```
  __      ___       _      _             _   _      _        
