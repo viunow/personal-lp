@@ -7,7 +7,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: '@viniciusneto',
+  title: '@viniciusneto | front-end developer',
   description: "I'm Vinicius and i'm a web developer."
 };
 

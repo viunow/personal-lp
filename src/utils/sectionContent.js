@@ -5,13 +5,13 @@ export const sectionContent = {
       icon: '📄',
       description: 'Welcome to my portfolio!'
     },
-    { title: 'Status.md', icon: '📝', description: 'Frontend Developer' }
+    { title: 'Status.md', icon: '📝', description: 'Front-end Developer' }
   ],
   about: [
     {
       title: 'About.md',
       icon: '📝',
-      description: 'Frontend Developer | JavaScript | React | NextJS | NestJS'
+      description: 'Front-end Developer | JavaScript | React | NextJS | NestJS'
     },
     {
       title: 'Location.txt',
@@ -57,7 +57,7 @@ export const sectionContent = {
       title: 'Valorizza.work',
       icon: '📄',
       description:
-        'Frontend Developer (JS, React, Next, Nest) - Jul 2023 to Present'
+        'Front-end Developer (JS, React, Next, Nest) - Jul 2023 to Present'
     },
     {
       title: 'Skeel.work',

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import {
   ChevronLeft,
   ChevronRight,
@@ -15,6 +16,7 @@ import { sectionContent } from '@/utils/sectionContent';
 import Link from 'next/link';
 import TerminalModal from '@/components/TerminalModal';
 import { generateTerminalContent } from '@/utils/terminalGenerator';
+import profileImg from '../../public/profile.jpg';
 
 export default function WebPage() {
   const [activeSection, setActiveSection] = useState('home');
@@ -61,14 +63,16 @@ export default function WebPage() {
 
   const theme = {
     background: darkMode ? '#1e1e1e' : '#ffffff',
-    sidebar: darkMode ? '#252525' : '#f5f5f7',
-    titleBar: darkMode ? '#323233' : '#e7e7e7',
+    sidebar: darkMode ? '#333333' : '#f5f5f7',
+    titleBar: darkMode ? '#3C3B39' : '#e7e7e7',
     text: darkMode ? '#ffffff' : '#000000',
-    secondaryText: darkMode ? '#9d9d9d' : '#6e6e73',
+    secondaryText: darkMode ? '#9a9a9a' : '#6e6e73',
     border: darkMode ? '#383838' : '#d2d2d7',
     fileHover: darkMode ? '#2a2a2a' : '#f0f0f0',
-    fileActive: darkMode ? '#38383f' : '#e8e8ed',
-    searchBg: darkMode ? '#0c0c0c' : '#f0f0f0'
+    fileActive: darkMode ? '#538DDF' : '#e8e8ed',
+    searchBg: darkMode ? '#0c0c0c' : '#f0f0f0',
+    avatarBorder: darkMode ? '#4a4a4a' : '#d2d2d7',
+    avatarGlow: darkMode ? 'rgba(59, 130, 246, 0.5)' : 'rgba(59, 130, 246, 0.3)'
   };
 
   const currentSectionName =
@@ -99,13 +103,13 @@ export default function WebPage() {
           <div className="ml-2 mr-6 flex space-x-4">
             <button
               onClick={navigatePrevious}
-              className="hover:bg-blue-600/10 p-1 rounded-md hover:cursor-pointer"
+              className="hover:bg-[#333333] p-1 rounded-md hover:cursor-pointer"
             >
               <ChevronLeft size={16} />
             </button>
             <button
               onClick={navigateNext}
-              className="hover:bg-blue-600/10 p-1 rounded-md hover:cursor-pointer"
+              className="hover:bg-[#333333] p-1 rounded-md hover:cursor-pointer"
             >
               <ChevronRight size={16} />
             </button>
@@ -127,7 +131,7 @@ export default function WebPage() {
 
         <div className="flex-grow flex justify-center">
           <div
-            className="rounded-md px-3 py-1 flex items-center w-64"
+            className="rounded-md px-2 py-2 flex items-center w-64"
             style={{ background: theme.searchBg }}
           >
             <Search
@@ -155,13 +159,44 @@ export default function WebPage() {
       <div className="w-full flex flex-1 overflow-hidden">
         {/* Barra lateral */}
         <div
-          className="w-[15%] flex flex-col justify-between h-full overflow-y-auto border-r"
+          className="w-[30%] lg:w-[15%] flex flex-col justify-between h-full overflow-y-auto border-r"
           style={{
             background: theme.sidebar,
             borderColor: theme.border
           }}
         >
           <div>
+            {/* Avatar do usuário - NOVO */}
+            <div className="flex flex-col items-center pt-6 pb-4">
+              <div
+                className="rounded-full p-1 mb-2"
+                style={{
+                  border: `2px solid ${theme.avatarBorder}`,
+                  boxShadow: `0 0 10px ${theme.avatarGlow}`,
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <div className="w-16 h-16 rounded-full overflow-hidden">
+                  <Image
+                    src={profileImg.src}
+                    alt="Avatar"
+                    width={64}
+                    height={64}
+                    className="rounded-full scale-[1.2]"
+                  />
+                </div>
+              </div>
+              <span
+                className="text-sm font-medium"
+                style={{ color: theme.text }}
+              >
+                Vinícius Neto
+              </span>
+              <span className="text-xs text-neutral-300">
+                Front-end Developer
+              </span>
+            </div>
+
             <div
               className="p-2 pt-4 pb-1 text-xs"
               style={{ color: theme.secondaryText }}
@@ -173,7 +208,7 @@ export default function WebPage() {
                 <li
                   key={section.id}
                   onClick={() => setActiveSection(section.id)}
-                  className={`px-3 py-1.5 flex items-center cursor-pointer mx-1 rounded-md ${
+                  className={`w-[90%] px-2 py-1.5 flex items-center cursor-pointer mx-2 rounded-md ${
                     activeSection === section.id ? '' : ''
                   }`}
                   style={{
@@ -191,12 +226,12 @@ export default function WebPage() {
             </ul>
           </div>
           <div className="p-2 pt-4 flex items-end justify-end">
-            <h2 className="text-stone-500 text-xs">
+            <h2 className="text-neutral-400 text-xs">
               developed by
               <Link
                 href="https://linkedin.com/in/viniciusneto"
                 target="_blank"
-                className="pl-1 underline"
+                className="pl-1 underline hover:text-[#538DDF]"
               >
                 @viniciusneto
               </Link>
@@ -206,10 +241,10 @@ export default function WebPage() {
 
         {/* Área do conteúdo */}
         <div
-          className="w-[85%] flex-grow p-6 overflow-y-auto"
+          className="w-[70%] lg:w-[85%] flex-grow p-6 overflow-y-auto"
           style={{ background: theme.background }}
         >
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {sectionContent[activeSection].map((item, index) => (
               <div
                 key={index}
