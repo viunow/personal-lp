@@ -1,24 +1,219 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
 }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  scroll-behavior: smooth;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Adicione estes estilos ao seu arquivo global.css */
+
+/* Animações para o terminal */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes terminalGlow {
+  0%, 100% { box-shadow: 0 0 10px rgba(0, 136, 255, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(0, 136, 255, 0.5); }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Classes de utilidade para animações */
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.animate-blink {
+  animation: blink 0.8s infinite;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.4s ease-out;
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+.animate-terminal-glow {
+  animation: terminalGlow 2s infinite;
+}
+
+/* Efeito de borda neon/glow para cards */
+.neon-border {
+  border: 1px solid rgba(0, 136, 255, 0.3);
+  box-shadow: 0 0 8px rgba(0, 136, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.neon-border:hover {
+  border-color: rgba(0, 136, 255, 0.6);
+  box-shadow: 0 0 15px rgba(0, 136, 255, 0.5);
+}
+
+/* Terminal */
+.terminal-container {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.terminal {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.terminal-maximized {
+  position: fixed;
+  inset: 0;
+  margin: 0;
+  border-radius: 0;
+}
+
+.terminal-title-bar {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid;
+}
+
+.terminal-content {
+  padding: 1rem;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  overflow-y: auto;
+}
+
+/* Scrollbar personalizada para o terminal */
+.terminal-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Botões de controle do terminal */
+.terminal-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.terminal-control-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.terminal-close {
+  background-color: #ff5f56;
+}
+
+.terminal-close:hover {
+  background-color: #ff3333;
+}
+
+.terminal-minimize {
+  background-color: #ffbd2e;
+}
+
+.terminal-minimize:hover {
+  background-color: #ffaa00;
+}
+
+.terminal-maximize {
+  background-color: #27c93f;
+}
+
+.terminal-maximize:hover {
+  background-color: #1db234;
+}
+
+/* Tipos de mensagens do terminal */
+.terminal-command {
+  color: #f8f8f8;
+}
+
+.terminal-success {
+  color: #4CAF50;
+}
+
+.terminal-error {
+  color: #F44336;
+}
+
+.terminal-warning {
+  color: #FF9800;
+}
+
+.terminal-info {
+  color: #2196F3;
+}
+
+/* Efeito de teclar */
+.typing-effect {
+  border-right: 2px solid;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white; }
 }
