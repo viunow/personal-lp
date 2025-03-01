@@ -10,7 +10,6 @@ export default function Home() {
   const [bootLines, setBootLines] = useState([]);
   const terminalRef = useRef(null);
 
-  // ASCII Art com escape correto para as barras invertidas
   const asciiArt = [
     {
       line: ' __      ___       _      _             _   _      _        ',

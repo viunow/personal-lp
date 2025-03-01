@@ -17,6 +17,7 @@ import Link from 'next/link';
 import TerminalModal from '@/components/TerminalModal';
 import { generateTerminalContent } from '@/utils/terminalGenerator';
 import profileImg from '../../public/profile.jpg';
+import githubImg from '../../public/github.png';
 
 export default function WebPage() {
   const [activeSection, setActiveSection] = useState('home');
@@ -64,15 +65,15 @@ export default function WebPage() {
   const theme = {
     background: darkMode ? '#1e1e1e' : '#ffffff',
     sidebar: darkMode ? '#333333' : '#f5f5f7',
-    titleBar: darkMode ? '#3C3B39' : '#e7e7e7',
+    titleBar: darkMode ? '#2a2a2a' : '#e7e7e7',
     text: darkMode ? '#ffffff' : '#000000',
     secondaryText: darkMode ? '#9a9a9a' : '#6e6e73',
     border: darkMode ? '#383838' : '#d2d2d7',
     fileHover: darkMode ? '#2a2a2a' : '#f0f0f0',
     fileActive: darkMode ? '#00bc7d' : '#e8e8ed',
     searchBg: darkMode ? '#0c0c0c' : '#f0f0f0',
-    avatarBorder: darkMode ? '#00bc7d' : '#d2d2d7',
-    avatarGlow: darkMode ? 'rgba(0, 188, 125, 1)' : 'rgba(59, 130, 246, 0.3)'
+    avatarBorder: darkMode ? '#00bc7d' : '#00bc7d',
+    avatarGlow: darkMode ? 'rgba(0, 188, 125, 1)' : 'rgba(0, 188, 125, 1)'
   };
 
   const currentSectionName =
@@ -193,7 +194,9 @@ export default function WebPage() {
               >
                 Vinícius Neto
               </span>
-              <span className="text-xs text-neutral-300">
+              <span
+                className={`text-xs ${darkMode ? 'text-neutral-300' : 'text-neutral-600'}`}
+              >
                 Front-end Developer
               </span>
             </div>
@@ -212,7 +215,7 @@ export default function WebPage() {
                   className={`w-[90%] px-2 py-1.5 flex items-center cursor-pointer mx-2 rounded-md font-medium ${
                     activeSection === section.id
                       ? 'bg-emerald-500 text-black'
-                      : 'bg-transparent text-white'
+                      : `bg-transparent ${darkMode ? 'text-white' : 'text-neutral-600'}`
                   }`}
                 >
                   <span className="w-5 text-center mr-2">{section.icon}</span>
@@ -221,7 +224,17 @@ export default function WebPage() {
               ))}
             </ul>
           </div>
-          <div className="p-2 pt-4 flex items-end justify-end">
+          <div className="p-2 pt-4 flex flex-col gap-1 items-end justify-end">
+            <h2 className="text-neutral-400 text-xs">
+              check out my
+              <Link
+                href="https://github.com/viunow"
+                target="_blank"
+                className="pl-1 underline hover:text-emerald-500"
+              >
+                @github
+              </Link>
+            </h2>
             <h2 className="text-neutral-400 text-xs">
               developed by
               <Link
