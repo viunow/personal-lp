@@ -25,18 +25,16 @@ export default function TerminalModal({
     terminalSuccess: '#4CAF50',
     terminalError: '#F44336',
     terminalWarning: '#FF9800',
-    terminalInfo: '#2196F3'
+    terminalInfo: '#00bc7d'
   };
 
   const toggleMaximize = () => {
     setIsTerminalMaximized(!isTerminalMaximized);
   };
 
-  // Efeito para exibir as linhas gradualmente
   useEffect(() => {
     if (!isOpen) return;
 
-    // Resetar as linhas exibidas quando o modal abrir
     setDisplayedLines([]);
 
     let timeoutId;
@@ -47,7 +45,6 @@ export default function TerminalModal({
           timeoutId = setTimeout(() => {
             setDisplayedLines(prev => [...prev, content[i]]);
 
-            // Auto-scroll para mostrar a última linha
             if (terminalRef.current) {
               terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
             }

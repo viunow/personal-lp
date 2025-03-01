@@ -69,10 +69,10 @@ export default function WebPage() {
     secondaryText: darkMode ? '#9a9a9a' : '#6e6e73',
     border: darkMode ? '#383838' : '#d2d2d7',
     fileHover: darkMode ? '#2a2a2a' : '#f0f0f0',
-    fileActive: darkMode ? '#538DDF' : '#e8e8ed',
+    fileActive: darkMode ? '#00bc7d' : '#e8e8ed',
     searchBg: darkMode ? '#0c0c0c' : '#f0f0f0',
-    avatarBorder: darkMode ? '#4a4a4a' : '#d2d2d7',
-    avatarGlow: darkMode ? 'rgba(59, 130, 246, 0.5)' : 'rgba(59, 130, 246, 0.3)'
+    avatarBorder: darkMode ? '#00bc7d' : '#d2d2d7',
+    avatarGlow: darkMode ? 'rgba(0, 188, 125, 1)' : 'rgba(59, 130, 246, 0.3)'
   };
 
   const currentSectionName =
@@ -103,23 +103,23 @@ export default function WebPage() {
           <div className="ml-2 mr-6 flex space-x-4">
             <button
               onClick={navigatePrevious}
-              className="hover:bg-[#333333] p-1 rounded-md hover:cursor-pointer"
+              className="hover:bg-emerald-500/50 hover:text-white p-1 rounded-md hover:cursor-pointer"
             >
               <ChevronLeft size={16} />
             </button>
             <button
               onClick={navigateNext}
-              className="hover:bg-[#333333] p-1 rounded-md hover:cursor-pointer"
+              className="hover:bg-emerald-500/50 hover:text-white p-1 rounded-md hover:cursor-pointer"
             >
               <ChevronRight size={16} />
             </button>
           </div>
 
           <div className="mx-4 flex space-x-1">
-            <button className="p-1 rounded-md hover:bg-blue-600/10">
+            <button className="p-1 rounded-md hover:bg-emerald-500/10">
               <Grid2X2 size={16} />
             </button>
-            <button className="p-1 rounded-md hover:bg-blue-600/10">
+            <button className="p-1 rounded-md hover:bg-emerald-500/10">
               <List size={16} />
             </button>
           </div>
@@ -171,8 +171,8 @@ export default function WebPage() {
               <div
                 className="rounded-full p-1 mb-2"
                 style={{
-                  border: `2px solid ${theme.avatarBorder}`,
-                  boxShadow: `0 0 10px ${theme.avatarGlow}`,
+                  border: `1px solid ${theme.avatarBorder}`,
+                  boxShadow: `0 0 15px ${theme.avatarGlow}`,
                   transition: 'all 0.3s ease'
                 }}
               >
@@ -182,7 +182,8 @@ export default function WebPage() {
                     alt="Avatar"
                     width={64}
                     height={64}
-                    className="rounded-full scale-[1.2]"
+                    quality={100}
+                    className="rounded-full scale-[1.1]"
                   />
                 </div>
               </div>
@@ -208,16 +209,11 @@ export default function WebPage() {
                 <li
                   key={section.id}
                   onClick={() => setActiveSection(section.id)}
-                  className={`w-[90%] px-2 py-1.5 flex items-center cursor-pointer mx-2 rounded-md ${
-                    activeSection === section.id ? '' : ''
+                  className={`w-[90%] px-2 py-1.5 flex items-center cursor-pointer mx-2 rounded-md font-medium ${
+                    activeSection === section.id
+                      ? 'bg-emerald-500 text-black'
+                      : 'bg-transparent text-white'
                   }`}
-                  style={{
-                    color: theme.text,
-                    background:
-                      activeSection === section.id
-                        ? theme.fileActive
-                        : 'transparent'
-                  }}
                 >
                   <span className="w-5 text-center mr-2">{section.icon}</span>
                   <span className="text-sm">{section.label}</span>
@@ -231,7 +227,7 @@ export default function WebPage() {
               <Link
                 href="https://linkedin.com/in/viniciusneto"
                 target="_blank"
-                className="pl-1 underline hover:text-[#538DDF]"
+                className="pl-1 underline hover:text-emerald-500"
               >
                 @viniciusneto
               </Link>
