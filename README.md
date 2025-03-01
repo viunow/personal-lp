@@ -1,22 +1,37 @@
-# Vinícius Neto | Front-end Developer
-
 ```
- __      ___       _      _             _   _      _        
- \ \    / (_)     (_)    (_)           | \ | |    | |       
-  \ \  / / _ _ __  _  ___ _ _   _ ___  |  \| | ___| |_ ___  
-   \ \/ / | | '_ \| |/ __| | | | / __| | . ` |/ _ \ __/ _ \ 
-    \  /  | | | | | | (__| | |_| \__ \ | |\  |  __/ || (_) |
-     \/   |_|_| |_|_|\___|_|\__,_|___/ |_| \_|\___|\__\___/ 
-                                                            
+
+     ______                __            __            __                                           __                                                                        
+   _/      \_             |  \          |  \          |  \                                         |  \                                                                       
+  /   $$$$$$ \  __     __  \$$ _______   \$$  _______  \$$ __    __   _______  _______    ______  _| $$_     ______                                                           
+ /  $$$____$$$\|  \   /  \|  \|       \ |  \ /       \|  \|  \  |  \ /       \|       \  /      \|   $$ \   /      \                                                          
+|  $$/     \ $$\\$$\ /  $$| $$| $$$$$$$\| $$|  $$$$$$$| $$| $$  | $$|  $$$$$$$| $$$$$$$\|  $$$$$$\\$$$$$$  |  $$$$$$\                                                         
+| $$|  $$$$$| $$ \$$\  $$ | $$| $$  | $$| $$| $$      | $$| $$  | $$ \$$    \ | $$  | $$| $$    $$ | $$ __ | $$  | $$                                                         
+| $$| $$| $$| $$  \$$ $$  | $$| $$  | $$| $$| $$_____ | $$| $$__/ $$ _\$$$$$$\| $$  | $$| $$$$$$$$ | $$|  \| $$__/ $$                                                         
+| $$ \$$  $$| $$   \$$$   | $$| $$  | $$| $$ \$$     \| $$ \$$    $$|       $$| $$  | $$ \$$     \  \$$  $$ \$$    $$                                                         
+ \$$\ \$$$$$$$$     \$     \$$ \$$   \$$ \$$  \$$$$$$$ \$$  \$$$$$$  \$$$$$$$  \$$   \$$  \$$$$$$$   \$$$$   \$$$$$$                                                          
+  \$$\ __/   \                                                                                                                                                                
+   \$$$    $$$                                                                                                                                                                
+     \$$$$$$                                                                                                                                                                  
+  ______                                 __                                      __              __                                __                                         
+ /      \                               |  \                                    |  \            |  \                              |  \                                        
+|  $$$$$$\ ______    ______   _______  _| $$_           ______   _______    ____| $$        ____| $$  ______  __     __   ______  | $$  ______    ______    ______    ______  
+| $$_  \$$/      \  /      \ |       \|   $$ \ ______  /      \ |       \  /      $$       /      $$ /      \|  \   /  \ /      \ | $$ /      \  /      \  /      \  /      \ 
+| $$ \   |  $$$$$$\|  $$$$$$\| $$$$$$$\\$$$$$$|      \|  $$$$$$\| $$$$$$$\|  $$$$$$$      |  $$$$$$$|  $$$$$$\\$$\ /  $$|  $$$$$$\| $$|  $$$$$$\|  $$$$$$\|  $$$$$$\|  $$$$$$\
+| $$$$   | $$   \$$| $$  | $$| $$  | $$ | $$ __\$$$$$$| $$    $$| $$  | $$| $$  | $$      | $$  | $$| $$    $$ \$$\  $$ | $$    $$| $$| $$  | $$| $$  | $$| $$    $$| $$   \$$
+| $$     | $$      | $$__/ $$| $$  | $$ | $$|  \      | $$$$$$$$| $$  | $$| $$__| $$      | $$__| $$| $$$$$$$$  \$$ $$  | $$$$$$$$| $$| $$__/ $$| $$__/ $$| $$$$$$$$| $$      
+| $$     | $$       \$$    $$| $$  | $$  \$$  $$       \$$     \| $$  | $$ \$$    $$       \$$    $$ \$$     \   \$$$    \$$     \| $$ \$$    $$| $$    $$ \$$     \| $$      
+ \$$      \$$        \$$$$$$  \$$   \$$   \$$$$         \$$$$$$$ \$$   \$$  \$$$$$$$        \$$$$$$$  \$$$$$$$    \$      \$$$$$$$ \$$  \$$$$$$ | $$$$$$$   \$$$$$$$ \$$      
+                                                                                                                                                | $$                          
+                                                                                                                                                | $$                          
+                                                                                                                                                 \$$                          
 ```
 
 ## $ whoami
 
 ```bash
-> Frontend developer specializing in modern JavaScript frameworks, with a
+> Front-end developer specializing in modern JavaScript frameworks, with a
   focus on creating elegant, responsive, and user-friendly interfaces. 
-  Passionate about clean code, performance optimization, and pixel-perfect 
-  implementation.
+  Coding enthusiast | Technology seeker
 ```
 
 ## $ ls -la /skills
@@ -25,40 +40,26 @@
 drwxr-xr-x  3 viniciusneto dev  4096 Mar 01 2025 languages/
 -rw-r--r--  1 viniciusneto dev   512 Mar 01 2025 javascript.js
 -rw-r--r--  1 viniciusneto dev   512 Mar 01 2025 typescript.ts
--rw-r--r--  1 viniciusneto dev   256 Mar 01 2025 html.html
--rw-r--r--  1 viniciusneto dev   256 Mar 01 2025 css.css
+-rw-r--r--  1 viniciusneto dev   512 Mar 01 2025 c-sharp.cs
+-rw-r--r--  1 viniciusneto dev   256 Mar 01 2025 html5.html
+-rw-r--r--  1 viniciusneto dev   256 Mar 01 2025 css3.css
 
 drwxr-xr-x  5 viniciusneto dev  4096 Mar 01 2025 frameworks/
 -rw-r--r--  1 viniciusneto dev  1024 Mar 01 2025 react.jsx
 -rw-r--r--  1 viniciusneto dev  1024 Mar 01 2025 next.js
+-rw-r--r--  1 viniciusneto dev   512 Mar 01 2025 angular.ts
+-rw-r--r--  1 viniciusneto dev   512 Mar 01 2025 aspnet-core.cs
 -rw-r--r--  1 viniciusneto dev   512 Mar 01 2025 tailwind.css
+-rw-r--r--  1 viniciusneto dev   512 Mar 01 2025 bootstrap.css
+-rw-r--r--  1 viniciusneto dev   512 Mar 01 2025 node.js
 
-drwxr-xr-x  2 viniciusneto dev  4096 Mar 01 2025 tools/
--rw-r--r--  1 viniciusneto dev   256 Mar 01 2025 git.sh
--rw-r--r--  1 viniciusneto dev   256 Mar 01 2025 vscode.json
--rw-r--r--  1 viniciusneto dev   256 Mar 01 2025 figma.sketch
-```
+drwxr-xr-x  2 viniciusneto dev  4096 Mar 01 2025 databases/
+-rw-r--r--  1 viniciusneto dev   256 Mar 01 2025 mongodb.json
 
-## $ cat /experience.log
-
-```bash
-[2023-Present] Senior Frontend Developer @ TechCompany
-[....] Lead React/Next.js application development
-[....] Implemented design systems with Tailwind CSS
-[....] Optimized performance for core web applications
-[OK] Improved website SEO score by 35%
-
-[2021-2023] Frontend Developer @ StartupCo
-[....] Built responsive interfaces using React
-[....] Created animations with React libraries
-[....] Developed reusable component systems 
-[OK] Reduced page load time by 45%
-
-[2019-2021] Junior Web Developer @ DigitalAgency
-[....] Coded UI components using HTML, CSS, JavaScript
-[....] Maintained client websites
-[....] Collaborated with design team for pixel-perfect implementation
-[OK] Successfully delivered 20+ client projects
+drwxr-xr-x  2 viniciusneto dev  4096 Mar 01 2025 concepts/
+-rw-r--r--  1 viniciusneto dev   256 Mar 01 2025 rest-api.http
+-rw-r--r--  1 viniciusneto dev   256 Mar 01 2025 ddd.architecture
+-rw-r--r--  1 viniciusneto dev   256 Mar 01 2025 express.js
 ```
 
 ## $ cat /projects/featured.json
@@ -67,10 +68,12 @@ drwxr-xr-x  2 viniciusneto dev  4096 Mar 01 2025 tools/
 [
   {
     "name": "Portfolio Website",
-    "description": "Personal portfolio with macOS Finder-inspired interface",
+    "description": "Personal portfolio with macOS Finder-inspired interface and Linux Terminal inspired",
     "tech": ["React", "Next.js", "Tailwind CSS", "Framer Motion"],
     "features": [
-      "Terminal boot sequence",
+      "Linux Terminal boot sequence",
+ 	    "Linux Terminal script rendering",
+      "macOS finder inspired",
       "Responsive design",
       "Light/dark theme",
       "Custom animations"
@@ -78,16 +81,16 @@ drwxr-xr-x  2 viniciusneto dev  4096 Mar 01 2025 tools/
     "status": "online"
   },
   {
-    "name": "E-commerce Platform",
-    "description": "Modern shopping experience with React and Next.js",
-    "tech": ["React", "Next.js", "Tailwind CSS", "API integration"],
-    "features": [
-      "Server-side rendering",
-      "Cart functionality",
-      "Product filtering",
-      "Responsive UI"
+    "name": "Dev.to Articles",
+    "description": "Technical writing and tutorials",
+    "url": "https://dev.to/viunow",
+    "topics": [
+      "Frontend development",
+      "JavaScript tips",
+      "React best practices",
+      "Web performance"
     ],
-    "status": "deployed"
+    "status": "active"
   }
 ]
 ```
@@ -99,18 +102,18 @@ USAGE:
     contact [OPTIONS] viniciusneto
 
 OPTIONS:
-    -e, --email       Send an email to hello@viniciusneto.com
+    -e, --email       Send an email to viniciussneto.dev@gmail.com
     -l, --linkedin    Connect on LinkedIn: linkedin.com/in/viniciusneto
-    -g, --github      Check repositories: github.com/viniciusneto
-    -t, --twitter     Follow updates: twitter.com/viniciusneto
+    -g, --github      Check repositories: github.com/viunow
 ```
 
 ## $ ./start-conversation.sh
 
 ```bash
 Starting communication...
-[OK] I'm always open to interesting projects and collaborations
-[OK] Feel free to reach out through any of the contact methods above
+[OK] I'm a frontend developer based in Caxias do Sul, Rio Grande do Sul, Brasil
+[OK] Technology seeker | Hardware enthusiast | Music lover
+[OK] Companies, use my data carefully
 [....] Loading response time...
 [OK] Will respond within 24 hours
 
@@ -120,9 +123,9 @@ $ _
 ---
 
 <div align="center">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
   <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
   <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js" />
   <img src="https://img.shields.io/badge/Tailwind-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
 </div>
