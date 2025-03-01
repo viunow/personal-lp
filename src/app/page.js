@@ -4,7 +4,9 @@ import { useState, useEffect, useRef } from 'react';
 import WebPage from '@/components/WebPage';
 
 export default function Home() {
-  const [loading, setLoading] = useState(true);
+  const [bootComplete, setBootComplete] = useState(false);
+  const [bootOpacity, setBootOpacity] = useState(1);
+  const [webpageOpacity, setWebpageOpacity] = useState(0);
   const [bootLines, setBootLines] = useState([]);
   const terminalRef = useRef(null);
 
@@ -98,7 +100,9 @@ export default function Home() {
         type: 'success'
       },
       { text: '$ sudo initialize interface', delay: 600, type: 'command' },
-      { text: 'Loading system interface...', delay: 900, type: 'info' }
+      { text: 'Loading system interface...', delay: 800, type: 'info' },
+      { text: '[OK] Interface ready', delay: 300, type: 'success' },
+      { text: '$ launch', delay: 600, type: 'command' }
     ];
 
     let timeoutIds = [];
@@ -121,11 +125,23 @@ export default function Home() {
         timeoutIds.push(timeoutId);
       }
 
-      const finalTimeoutId = setTimeout(() => {
-        setLoading(false);
-      }, totalDelay + 1000);
+      const startTransitionId = setTimeout(() => {
+        setBootOpacity(0);
 
-      timeoutIds.push(finalTimeoutId);
+        const showWebpageId = setTimeout(() => {
+          setWebpageOpacity(1);
+
+          const completeTransitionId = setTimeout(() => {
+            setBootComplete(true);
+          }, 500);
+
+          timeoutIds.push(completeTransitionId);
+        }, 500);
+
+        timeoutIds.push(showWebpageId);
+      }, totalDelay + 800);
+
+      timeoutIds.push(startTransitionId);
     };
 
     displayLines();
@@ -152,46 +168,67 @@ export default function Home() {
     }
   };
 
-  if (loading) {
-    return (
-      <div className="w-full h-screen bg-black flex flex-col">
-        {/* Conteúdo do terminal */}
+  return (
+    <div className="w-full h-screen overflow-hidden relative bg-black">
+      {/* Container com fundo preto fixo para garantir que não apareça fundo branco */}
+      <div className="absolute inset-0 bg-black">
+        {/* WebPage - sempre presente, mas inicialmente com opacity 0 */}
         <div
-          ref={terminalRef}
-          className="flex-grow p-4 overflow-y-auto font-mono text-sm terminal-scrollbar bg-black text-white"
+          className="absolute inset-0 w-full h-screen"
+          style={{
+            opacity: webpageOpacity,
+            transition: 'opacity 0.6s ease-in-out',
+            zIndex: 10
+          }}
         >
-          <div className="mb-4">
-            {/* ASCII Art com degradê de cores (abordagem corrigida) */}
-            <div className="font-mono">
-              {asciiArt.map((item, index) => (
+          <WebPage />
+        </div>
+
+        {/* Terminal de Boot - permanece no DOM até que bootComplete seja true */}
+        {!bootComplete && (
+          <div
+            className="absolute inset-0 w-full h-screen bg-black flex flex-col"
+            style={{
+              opacity: bootOpacity,
+              transition: 'opacity 0.5s ease-in-out',
+              zIndex: 20
+            }}
+          >
+            <div
+              ref={terminalRef}
+              className="flex-grow p-4 overflow-y-auto font-mono text-sm terminal-scrollbar bg-black text-white"
+            >
+              <div className="mb-4">
+                {/* ASCII Art com degradê de cores */}
+                <div className="font-mono">
+                  {asciiArt.map((item, index) => (
+                    <div
+                      key={index}
+                      className="whitespace-pre"
+                      style={{ color: item.color }}
+                    >
+                      {item.line}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {bootLines.map((line, index) => (
                 <div
                   key={index}
-                  className="whitespace-pre"
-                  style={{ color: item.color }}
+                  className="mb-1"
+                  style={getLineStyle(line.type)}
                 >
-                  {item.line}
+                  {line.text}
                 </div>
               ))}
+
+              {/* Cursor piscante */}
+              <div className="inline-block w-2 h-4 bg-white/70 ml-1 animate-blink"></div>
             </div>
           </div>
-
-          {bootLines.map((line, index) => (
-            <div key={index} className="mb-1" style={getLineStyle(line.type)}>
-              {line.text}
-            </div>
-          ))}
-
-          {/* Cursor piscante */}
-          <div className="inline-block w-2 h-4 bg-white/70 ml-1 animate-blink"></div>
-        </div>
+        )}
       </div>
-    );
-  }
-
-  // Renderiza o WebPage após o boot
-  return (
-    <div className="w-full h-screen">
-      <WebPage />
     </div>
   );
 }
