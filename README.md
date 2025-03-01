@@ -1,36 +1,128 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Vinícius Neto | Frontend Developer
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+ __      ___       _      _             _   _      _        
+ \ \    / (_)     (_)    (_)           | \ | |    | |       
+  \ \  / / _ _ __  _  ___ _ _   _ ___  |  \| | ___| |_ ___  
+   \ \/ / | | '_ \| |/ __| | | | / __| | . ` |/ _ \ __/ _ \ 
+    \  /  | | | | | | (__| | |_| \__ \ | |\  |  __/ || (_) |
+     \/   |_|_| |_|_|\___|_|\__,_|___/ |_| \_|\___|\__\___/ 
+                                                            
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## $ whoami
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+> Frontend developer specializing in modern JavaScript frameworks, with a
+  focus on creating elegant, responsive, and user-friendly interfaces. 
+  Passionate about clean code, performance optimization, and pixel-perfect 
+  implementation.
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## $ ls -la /skills
 
-## Learn More
+```bash
+drwxr-xr-x  3 viniciusneto dev  4096 Mar 01 2025 languages/
+-rw-r--r--  1 viniciusneto dev   512 Mar 01 2025 javascript.js
+-rw-r--r--  1 viniciusneto dev   512 Mar 01 2025 typescript.ts
+-rw-r--r--  1 viniciusneto dev   256 Mar 01 2025 html.html
+-rw-r--r--  1 viniciusneto dev   256 Mar 01 2025 css.css
 
-To learn more about Next.js, take a look at the following resources:
+drwxr-xr-x  5 viniciusneto dev  4096 Mar 01 2025 frameworks/
+-rw-r--r--  1 viniciusneto dev  1024 Mar 01 2025 react.jsx
+-rw-r--r--  1 viniciusneto dev  1024 Mar 01 2025 next.js
+-rw-r--r--  1 viniciusneto dev   512 Mar 01 2025 tailwind.css
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+drwxr-xr-x  2 viniciusneto dev  4096 Mar 01 2025 tools/
+-rw-r--r--  1 viniciusneto dev   256 Mar 01 2025 git.sh
+-rw-r--r--  1 viniciusneto dev   256 Mar 01 2025 vscode.json
+-rw-r--r--  1 viniciusneto dev   256 Mar 01 2025 figma.sketch
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## $ cat /experience.log
 
-## Deploy on Vercel
+```bash
+[2023-Present] Senior Frontend Developer @ TechCompany
+[....] Lead React/Next.js application development
+[....] Implemented design systems with Tailwind CSS
+[....] Optimized performance for core web applications
+[OK] Improved website SEO score by 35%
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[2021-2023] Frontend Developer @ StartupCo
+[....] Built responsive interfaces using React
+[....] Created animations with React libraries
+[....] Developed reusable component systems 
+[OK] Reduced page load time by 45%
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[2019-2021] Junior Web Developer @ DigitalAgency
+[....] Coded UI components using HTML, CSS, JavaScript
+[....] Maintained client websites
+[....] Collaborated with design team for pixel-perfect implementation
+[OK] Successfully delivered 20+ client projects
+```
+
+## $ cat /projects/featured.json
+
+```json
+[
+  {
+    "name": "Portfolio Website",
+    "description": "Personal portfolio with macOS Finder-inspired interface",
+    "tech": ["React", "Next.js", "Tailwind CSS", "Framer Motion"],
+    "features": [
+      "Terminal boot sequence",
+      "Responsive design",
+      "Light/dark theme",
+      "Custom animations"
+    ],
+    "status": "online"
+  },
+  {
+    "name": "E-commerce Platform",
+    "description": "Modern shopping experience with React and Next.js",
+    "tech": ["React", "Next.js", "Tailwind CSS", "API integration"],
+    "features": [
+      "Server-side rendering",
+      "Cart functionality",
+      "Product filtering",
+      "Responsive UI"
+    ],
+    "status": "deployed"
+  }
+]
+```
+
+## $ contact --help
+
+```bash
+USAGE:
+    contact [OPTIONS] viniciusneto
+
+OPTIONS:
+    -e, --email       Send an email to hello@viniciusneto.com
+    -l, --linkedin    Connect on LinkedIn: linkedin.com/in/viniciusneto
+    -g, --github      Check repositories: github.com/viniciusneto
+    -t, --twitter     Follow updates: twitter.com/viniciusneto
+```
+
+## $ ./start-conversation.sh
+
+```bash
+Starting communication...
+[OK] I'm always open to interesting projects and collaborations
+[OK] Feel free to reach out through any of the contact methods above
+[....] Loading response time...
+[OK] Will respond within 24 hours
+
+$ _
+```
+
+---
+
+<div align="center">
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js" />
+  <img src="https://img.shields.io/badge/Tailwind-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+</div>
