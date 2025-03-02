@@ -1,8 +1,9 @@
 'use client';
 
-import { useEffect, usePathname, useSearchParams } from 'next/navigation';
-import { initGA, logPageView } from '@/lib/analytics';
+import { useEffect } from 'react';
 import { initSentry } from '@/lib/sentry';
+import { initGA, logPageView } from '@/lib/analytics';
+import { usePathname, useSearchParams } from 'next/navigation';
 
 export default function AnalyticsProvider({ children }) {
   const pathname = usePathname();
