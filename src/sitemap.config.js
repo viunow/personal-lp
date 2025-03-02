@@ -4,7 +4,7 @@ module.exports = {
   generateRobotsTxt: false,
   outDir: './public',
   generateIndexSitemap: false,
-  exclude: ['/admin', '/api/*'],
+  exclude: ['/admin', '/api/*', '/sentry-example-page'],
   additionalPaths: async config => {
     const result = [];
 

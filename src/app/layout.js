@@ -71,8 +71,7 @@ export function generateMetadata({ params }) {
       canonical: baseUrl
     },
     verification: {
-      // Adicione sua verificação do Google Search Console aqui
-      google: 'XXXXXXXXXXXXXXXXXXXXXXXXX'
+      google: 'Vl5ltq7SSb9HkFNbq4HFzK4fnFY8eH6kiJxD04Qzk5s'
     }
   };
 }
@@ -86,8 +85,8 @@ export default function RootLayout({ children }) {
         <WebsiteSchema />
       </head>
       <body className={`${inter.className} antialiased`}>
-        {children}
-        {/* <AnalyticsProvider>{children}</AnalyticsProvider> */}
+        {/* {children} */}
+        <AnalyticsProvider>{children}</AnalyticsProvider>
       </body>
     </html>
   );
