@@ -7,6 +7,7 @@ module.exports = {
   exclude: ['/admin', '/api/*', '/sentry-example-page'],
   additionalPaths: async config => {
     const result = [];
+    result.push({ loc: '/', changefreq: 'weekly', priority: 1 });
 
     // Adicione páginas personalizadas que podem não ser detectadas automaticamente
     // Exemplo: caminhos dinâmicos
