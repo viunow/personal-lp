@@ -9,8 +9,10 @@ export default function Home() {
   const [webpageOpacity, setWebpageOpacity] = useState(0);
   const [bootLines, setBootLines] = useState([]);
   const terminalRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
 
-  const asciiArt = [
+  // ASCII Art para desktop
+  const desktopAsciiArt = [
     {
       line: ' __      ___       _      _             _   _      _        ',
       color: '#FF0000'
@@ -38,12 +40,90 @@ export default function Home() {
     {
       line: '                                                            ',
       color: '#9400D3'
+    }
+  ];
+
+  // ASCII Art para mobile - VINICIUS na primeira parte
+  const mobileAsciiArtVinicius = [
+    {
+      line: ' __      ___       _      _             ',
+      color: '#FF0000'
     },
     {
-      line: '                                                            ',
+      line: ' \\ \\    / (_)     (_)    (_)           ',
+      color: '#FF4500'
+    },
+    {
+      line: '  \\ \\  / / _ _ __  _  ___ _ _   _ ___  ',
+      color: '#FFA500'
+    },
+    {
+      line: "   \\ \\/ / | | '_ \\| |/ __| | | | / __| ",
+      color: '#00FF00'
+    },
+    {
+      line: '    \\  /  | | | | | | (__| | |_| \\__ \\ ',
+      color: '#0000FF'
+    },
+    {
+      line: '     \\/   |_|_| |_|_|\\___|_|\\__,_|___/ ',
+      color: '#8A2BE2'
+    },
+    {
+      line: '                                        ',
       color: '#9400D3'
     }
   ];
+
+  // ASCII Art para mobile - NETO na segunda parte
+  const mobileAsciiArtNeto = [
+    {
+      line: ' _   _      _        ',
+      color: '#FF0000'
+    },
+    {
+      line: '| \\ | |    | |       ',
+      color: '#FF4500'
+    },
+    {
+      line: '|  \\| | ___| |_ ___  ',
+      color: '#FFA500'
+    },
+    {
+      line: '| . ` |/ _ \\ __/ _ \\ ',
+      color: '#00FF00'
+    },
+    {
+      line: '| |\\  |  __/ || (_) |',
+      color: '#0000FF'
+    },
+    {
+      line: '|_| \\_|\\___|\\__\\___/ ',
+      color: '#8A2BE2'
+    },
+    {
+      line: '                     ',
+      color: '#9400D3'
+    }
+  ];
+
+  // Detectar se é mobile baseado na largura da tela
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 640); // 640px é um breakpoint comum para mobile
+    };
+
+    // Verificar no carregamento inicial
+    checkIfMobile();
+
+    // Adicionar listener para mudanças de tamanho da tela
+    window.addEventListener('resize', checkIfMobile);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', checkIfMobile);
+    };
+  }, []);
 
   useEffect(() => {
     const bootSequence = [
@@ -69,9 +149,9 @@ export default function Home() {
       },
       { text: '[OK] Starting system services...', delay: 300, type: 'success' },
       { text: '$ sudo start frontend-services', delay: 500, type: 'command' },
-      { text: '[....] Starting V8 engine', delay: 200, type: 'info' },
-      { text: '[....] Loading components', delay: 200, type: 'info' },
-      { text: '[....] Loading modules', delay: 200, type: 'info' },
+      { text: '[....] Starting V8 engine', delay: 300, type: 'info' },
+      { text: '[....] Loading components', delay: 300, type: 'info' },
+      { text: '[....] Loading modules', delay: 300, type: 'info' },
       {
         text: '[....] Configuring environment',
         delay: 200,
@@ -98,10 +178,10 @@ export default function Home() {
         delay: 500,
         type: 'success'
       },
-      { text: '$ sudo initialize interface', delay: 600, type: 'command' },
+      { text: '$ sudo initialize interface', delay: 800, type: 'command' },
       { text: 'Loading system interface...', delay: 800, type: 'info' },
-      { text: '[OK] Interface ready', delay: 300, type: 'success' },
-      { text: '$ launch', delay: 600, type: 'command' }
+      { text: '[OK] Interface ready', delay: 800, type: 'success' },
+      { text: '$ launch', delay: 1000, type: 'command' }
     ];
 
     let timeoutIds = [];
@@ -198,17 +278,43 @@ export default function Home() {
               className="flex-grow p-4 overflow-y-auto font-mono text-sm terminal-scrollbar bg-black text-white"
             >
               <div className="mb-4">
-                {/* ASCII Art com degradê de cores */}
+                {/* ASCII Art responsivo */}
                 <div className="font-mono">
-                  {asciiArt.map((item, index) => (
-                    <div
-                      key={index}
-                      className="whitespace-pre"
-                      style={{ color: item.color }}
-                    >
-                      {item.line}
-                    </div>
-                  ))}
+                  {isMobile ? (
+                    <>
+                      {/* Versão mobile - VINICIUS */}
+                      {mobileAsciiArtVinicius.map((item, index) => (
+                        <div
+                          key={`vinicius-${index}`}
+                          className="whitespace-pre text-center"
+                          style={{ color: item.color }}
+                        >
+                          {item.line}
+                        </div>
+                      ))}
+                      {/* Versão mobile - NETO */}
+                      {mobileAsciiArtNeto.map((item, index) => (
+                        <div
+                          key={`neto-${index}`}
+                          className="whitespace-pre text-center"
+                          style={{ color: item.color }}
+                        >
+                          {item.line}
+                        </div>
+                      ))}
+                    </>
+                  ) : (
+                    // Versão desktop
+                    desktopAsciiArt.map((item, index) => (
+                      <div
+                        key={index}
+                        className="whitespace-pre"
+                        style={{ color: item.color }}
+                      >
+                        {item.line}
+                      </div>
+                    ))
+                  )}
                 </div>
               </div>
 

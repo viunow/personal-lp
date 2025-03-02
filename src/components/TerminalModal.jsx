@@ -11,8 +11,11 @@ export default function TerminalModal({
   darkMode
 }) {
   const [displayedLines, setDisplayedLines] = useState([]);
+  const [currentLineIndex, setCurrentLineIndex] = useState(0);
+  const [currentText, setCurrentText] = useState('');
   const [isTerminalMaximized, setIsTerminalMaximized] = useState(false);
   const terminalRef = useRef(null);
+  const typingRef = useRef(null);
 
   const theme = {
     text: darkMode ? '#ffffff' : '#000000',
@@ -32,32 +35,85 @@ export default function TerminalModal({
     setIsTerminalMaximized(!isTerminalMaximized);
   };
 
+  // Reset do estado quando o modal abre
   useEffect(() => {
     if (!isOpen) return;
 
+    // Limpar qualquer temporizador existente
+    if (typingRef.current) {
+      clearTimeout(typingRef.current);
+    }
+
     setDisplayedLines([]);
+    setCurrentLineIndex(0);
+    setCurrentText('');
 
-    let timeoutId;
+    // Inicia a digitação da primeira linha
+    typeNextLine(0);
 
-    const displayLines = async () => {
-      for (let i = 0; i < content.length; i++) {
-        await new Promise(resolve => {
-          timeoutId = setTimeout(() => {
-            setDisplayedLines(prev => [...prev, content[i]]);
+    return () => {
+      if (typingRef.current) {
+        clearTimeout(typingRef.current);
+      }
+    };
+  }, [isOpen, content]);
 
-            if (terminalRef.current) {
-              terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
-            }
-            resolve();
-          }, content[i].delay || 300);
-        });
+  // Função principal para gerenciar a digitação
+  const typeNextLine = lineIndex => {
+    if (!isOpen || lineIndex >= content.length) return;
+
+    const currentLine = content[lineIndex];
+    let charIndex = 0;
+    const fullText = currentLine.text;
+
+    // Calcular a velocidade de digitação
+    const baseSpeed = currentLine.type === 'command' ? 30 : 10;
+
+    // Função que digita um caractere por vez
+    const typeChar = () => {
+      if (charIndex < fullText.length) {
+        charIndex++;
+        setCurrentText(fullText.substring(0, charIndex));
+
+        // Scroll para o final
+        if (terminalRef.current) {
+          terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
+        }
+
+        // Programar o próximo caractere
+        const randomVariation = Math.random() * 5;
+        typingRef.current = setTimeout(typeChar, baseSpeed + randomVariation);
+      } else {
+        // Linha completa, adicionar às linhas exibidas
+        setDisplayedLines(prevLines => [
+          ...prevLines,
+          { ...currentLine, text: fullText }
+        ]);
+
+        // Resetar o texto atual
+        setCurrentText('');
+
+        // Atualizar o índice da linha atual
+        setCurrentLineIndex(lineIndex + 1);
+
+        // Determinar a pausa antes da próxima linha
+        const pauseTime =
+          currentLine.type === 'command'
+            ? 1000
+            : currentLine.type === 'error'
+              ? 1000
+              : currentLine.delay || 300;
+
+        // Programar a próxima linha após a pausa
+        typingRef.current = setTimeout(() => {
+          typeNextLine(lineIndex + 1);
+        }, pauseTime);
       }
     };
 
-    displayLines();
-
-    return () => clearTimeout(timeoutId);
-  }, [isOpen, content]);
+    // Iniciar a digitação da linha
+    typeChar();
+  };
 
   const getLineStyle = type => {
     switch (type) {
@@ -153,20 +209,25 @@ export default function TerminalModal({
             maxHeight: isTerminalMaximized ? 'none' : '400px'
           }}
         >
+          {/* Linhas já digitadas completamente */}
           {displayedLines.map((line, index) => (
-            <div
-              key={index}
-              className="mb-1 animate-fadeIn"
-              style={getLineStyle(line.type)}
-            >
+            <div key={index} className="mb-1" style={getLineStyle(line.type)}>
               {line.text}
             </div>
           ))}
 
-          {/* Cursor piscante */}
-          {displayedLines.length < content.length && (
-            <div className="inline-block w-2 h-4 bg-white/70 ml-1 animate-blink"></div>
+          {/* Linha atual sendo digitada */}
+          {currentLineIndex < content.length && currentText && (
+            <div
+              className="mb-1"
+              style={getLineStyle(content[currentLineIndex].type)}
+            >
+              {currentText}
+            </div>
           )}
+
+          {/* Cursor piscante */}
+          <div className="inline-block w-2 h-4 bg-white/70 ml-1 animate-blink"></div>
         </div>
       </div>
     </div>
