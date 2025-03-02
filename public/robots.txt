@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://viniciusneto.dev/sitemap.xml
+Sitemap: https://www.viniciusneto.dev/sitemap.xml
