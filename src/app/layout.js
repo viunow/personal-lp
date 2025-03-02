@@ -2,6 +2,7 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import AnalyticsProvider from '@/components/AnalyticsProvider';
 import { PersonSchema, WebsiteSchema } from '@/components/SEO';
+import { Suspense } from 'react';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -86,7 +87,9 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${inter.className} antialiased`}>
         {/* {children} */}
-        <AnalyticsProvider>{children}</AnalyticsProvider>
+        <Suspense>
+          <AnalyticsProvider>{children}</AnalyticsProvider>
+        </Suspense>
       </body>
     </html>
   );
