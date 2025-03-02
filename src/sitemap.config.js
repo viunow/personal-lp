@@ -1,6 +1,9 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://www.viniciusneto.dev',
+  siteUrl:
+    process.env.BASE_URL ||
+    process.env.NEXT_PUBLIC_BASE_URL ||
+    'https://www.viniciusneto.dev',
   generateRobotsTxt: false,
   outDir: './public',
   generateIndexSitemap: false,
