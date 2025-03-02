@@ -15,23 +15,23 @@ export default function Home() {
   const desktopAsciiArt = [
     {
       line: ' __      ___       _      _             _   _      _        ',
-      color: '#FF0000'
+      color: '#9400D3'
     },
     {
       line: ' \\ \\    / (_)     (_)    (_)           | \\ | |    | |       ',
-      color: '#FF4500'
+      color: '#8A2BE2'
     },
     {
       line: '  \\ \\  / / _ _ __  _  ___ _ _   _ ___  |  \\| | ___| |_ ___  ',
-      color: '#FFA500'
+      color: '#9400D3'
     },
     {
       line: "   \\ \\/ / | | '_ \\| |/ __| | | | / __| | . ` |/ _ \\ __/ _ \\ ",
-      color: '#00FF00'
+      color: '#8A2BE2'
     },
     {
       line: '    \\  /  | | | | | | (__| | |_| \\__ \\ | |\\  |  __/ || (_) |',
-      color: '#0000FF'
+      color: '#9400D3'
     },
     {
       line: '     \\/   |_|_| |_|_|\\___|_|\\__,_|___/ |_| \\_|\\___|\\__\\___/ ',
@@ -47,23 +47,23 @@ export default function Home() {
   const mobileAsciiArtVinicius = [
     {
       line: ' __      ___       _      _             ',
-      color: '#FF0000'
+      color: '#9400D3'
     },
     {
       line: ' \\ \\    / (_)     (_)    (_)           ',
-      color: '#FF4500'
+      color: '#8A2BE2'
     },
     {
       line: '  \\ \\  / / _ _ __  _  ___ _ _   _ ___  ',
-      color: '#FFA500'
+      color: '#9400D3'
     },
     {
       line: "   \\ \\/ / | | '_ \\| |/ __| | | | / __| ",
-      color: '#00FF00'
+      color: '#8A2BE2'
     },
     {
       line: '    \\  /  | | | | | | (__| | |_| \\__ \\ ',
-      color: '#0000FF'
+      color: '#9400D3'
     },
     {
       line: '     \\/   |_|_| |_|_|\\___|_|\\__,_|___/ ',
@@ -79,23 +79,23 @@ export default function Home() {
   const mobileAsciiArtNeto = [
     {
       line: ' _   _      _        ',
-      color: '#FF0000'
+      color: '#9400D3'
     },
     {
       line: '| \\ | |    | |       ',
-      color: '#FF4500'
+      color: '#8A2BE2'
     },
     {
       line: '|  \\| | ___| |_ ___  ',
-      color: '#FFA500'
+      color: '#9400D3'
     },
     {
       line: '| . ` |/ _ \\ __/ _ \\ ',
-      color: '#00FF00'
+      color: '#8A2BE2'
     },
     {
       line: '| |\\  |  __/ || (_) |',
-      color: '#0000FF'
+      color: '#9400D3'
     },
     {
       line: '|_| \\_|\\___|\\__\\___/ ',
